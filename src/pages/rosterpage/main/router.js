@@ -1,20 +1,19 @@
-
 import list from '../list';
 import card from '../card';
 const routes = [
   {
     path: '/',
     component: list,
-    exact: true
+    exact: true,
   },
   {
     path: '/list',
-    component: list
+    component: list,
   },
   {
-    path: '/card',
-    component: card
-  }
+    path: '/index',
+    component: card,
+  },
 ];
 
 export default routes;
