@@ -18,5 +18,5 @@ export function reFresh(props) {
 }
 
 export function addItem(history) {
-  window.location.href = './index';
+
 }

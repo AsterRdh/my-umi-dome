@@ -1,10 +1,11 @@
 import routes from './router';
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import List from '../list';
 import Card from '../card';
 import ProLayout from '@ant-design/pro-layout';
-
+import { history } from 'umi';
+import { Link } from 'umi';
 const Topics = ({ match }) => {
   return (
     <div>
@@ -28,10 +29,12 @@ const Topic = ({ match }) => {
 };
 
 class RosterMain extends Component {
+
   render() {
     return (
       <div>
         <Router>
+          <Link to={"/staffroster/roster/card"}>123</Link>
           <Switch>
             {/*<Route path="/"  component={() => <Card/>}></Route>*/}
             <Route
@@ -47,7 +50,7 @@ class RosterMain extends Component {
                 <List name={this.props.name} history={history} />
               )}
             ></Route>
-            <Route path="/index" component={Card}></Route>
+            <Route path="/card" component={Card}></Route>
           </Switch>
         </Router>
       </div>

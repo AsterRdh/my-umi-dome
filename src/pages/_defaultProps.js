@@ -26,7 +26,7 @@ export default {
             component: <Welcome />,
           },
           {
-            path: '/home/roster',
+            path: '/staffroster/roster',
             name: '员工花名册',
             icon: <CrownOutlined />,
             component: <RosterMain name={'员工花名册'} />,
