@@ -4,6 +4,7 @@ import { datainfo } from '../constant/domeData';
 import { Typography, Button, Menu, Tabs, Row, Col, Input } from 'antd';
 import { ContainerOutlined, FormOutlined } from '@ant-design/icons';
 import { styles } from '../constant/styles';
+import { history } from 'umi';
 
 const { Title, Text } = Typography;
 const { TabPane } = Tabs;

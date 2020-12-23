@@ -5,6 +5,7 @@ import { listBodyDelete, reFresh, addItem } from './events/listOperator';
 import { RedoOutlined } from '@ant-design/icons';
 import Bubble from '@umijs/preset-ui/src/bubble/Bubble';
 import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
+import { history } from 'umi';
 
 class List extends Component {
   constructor(props) {
@@ -63,7 +64,9 @@ class List extends Component {
               <div style={{ textAlign: 'right' }}>
                 <Button
                   type="primary"
-                  onClick={() => addItem(this.props.history)}
+                  onClick={() => {
+                    history.push('/staffroster/roster/card');
+                  }}
                 >
                   新增
                 </Button>
