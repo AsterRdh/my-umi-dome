@@ -51,6 +51,7 @@
     "react-test-renderer": "^16.9.0",
     "test-umi-plugin": "^0.1.0",
     "umi": "^3.1.0",
+    "dva": "^2.1.0",
     "yorkie": "^2.0.0"
   },
   "gitHooks": {
@@ -64,7 +65,7 @@
     "@ant-design/pro-layout": "^6.7.0",
     "antd": "^4.9.4",
     "umi": "^3.1.0",
-    "dva": "^1.2.1",
+    "dva": "^2.1.0",
     "babel-plugin-import": "^1.13.3"
   }
 }

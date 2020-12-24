@@ -5,6 +5,7 @@ import { Typography, Button, Menu, Tabs, Row, Col, Input } from 'antd';
 import { ContainerOutlined, FormOutlined } from '@ant-design/icons';
 import { styles } from '../constant/styles';
 import { history } from 'umi';
+import qtCode from '../../../imgs/qtCode.png';
 
 const { Title, Text } = Typography;
 const { TabPane } = Tabs;
@@ -13,7 +14,9 @@ export default class Card extends React.Component {
     super(props);
     this.state = {
       data: datainfo,
-      isUpdate: false,
+      isUpdate: this.props.location.isChange
+        ? this.props.location.isChange
+        : false,
       testValue: 'testValue',
     };
   }
@@ -27,25 +30,33 @@ export default class Card extends React.Component {
           paddingBottom: 30,
         }}
       >
-        <div>
-          <Title level={2}>{this.state.data.hand.name}</Title>
-          <div style={{ marginBottom: 8 }}>
-            <Text>{this.state.data.hand.type}</Text>
-            <Text style={{ marginLeft: 10 }}>
-              入职日期: {this.state.data.hand.inData}
-            </Text>
-          </div>
-          <div style={{ marginBottom: 8 }}>
-            <ContainerOutlined />
-            <Text type="secondary">{this.state.data.hand.belong}</Text>
-          </div>
-          <Button style={{ borderColor: '#1890ff', color: '#1890ff' }}>
-            人事异动
-          </Button>
-          <Button danger style={{ marginLeft: 20 }}>
-            删除
-          </Button>
-        </div>
+        <Row>
+          <Col span={12}>
+            <div>
+              <Title level={2}>{this.state.data.hand.name}</Title>
+              <div style={{ marginBottom: 8 }}>
+                <Text>{this.state.data.hand.type}</Text>
+                <Text style={{ marginLeft: 10 }}>
+                  入职日期: {this.state.data.hand.inData}
+                </Text>
+              </div>
+              <div style={{ marginBottom: 8 }}>
+                <ContainerOutlined />
+                <Text type="secondary">{this.state.data.hand.belong}</Text>
+              </div>
+              <Button style={{ borderColor: '#1890ff', color: '#1890ff' }}>
+                人事异动
+              </Button>
+              <Button danger style={{ marginLeft: 20 }}>
+                删除
+              </Button>
+            </div>
+          </Col>
+          <Col span={11} style={{ textAlign: 'right' }}>
+            <img src={qtCode} style={{ height: 128 }} />
+          </Col>
+          <Col span={1} />
+        </Row>
 
         <Tabs defaultActiveKey="1" centered>
           <TabPane tab="在职信息" key="1">

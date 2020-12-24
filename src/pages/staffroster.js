@@ -1,8 +1,4 @@
-import {
-  Button,
-  Typography,
-  Avatar,
-} from 'antd';
+import { Button, Typography, Avatar } from 'antd';
 import BasicLayout from '@ant-design/pro-layout';
 import ProLayout, {
   PageContainer,
@@ -23,8 +19,7 @@ import {
 import { Layout, Menu } from 'antd';
 import Welcome from './welcome';
 
-
-import { history , Link } from 'umi'
+import { history, Link } from 'umi';
 
 export default class staffroster extends React.Component {
   constructor(props) {
@@ -43,7 +38,6 @@ export default class staffroster extends React.Component {
     const setCollapsed = false;
     return (
       <div>
-        <Link to="/staffroster/roster">/list (PrivateRoute)</Link>
         <div>
           <ProLayout
             {...defaultProps}
@@ -89,7 +83,7 @@ export default class staffroster extends React.Component {
               <a
                 onClick={() => {
                   //console.log(router);
-                  history.push(item.path)
+                  history.push(item.path);
                   this.setState({
                     insidePage: item.component,
                   });
