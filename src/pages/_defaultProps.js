@@ -11,55 +11,55 @@ import RosterMain from './rosterpage/main';
 export default {
   route: {
     path: '/',
-    component: <Welcome />,
+    component: '/staffroster',
     routes: [
       {
-        path: '/home',
+        path: '/staffroster',
         name: '首页',
         icon: <SmileOutlined />,
-        component: <Welcome />,
+        component: '/staffroster',
         routes: [
           {
-            path: '/home/working-table',
+            path: '/staffroster/workdeck',
             name: '工作台',
             icon: <CrownOutlined />,
-            component: <Welcome />,
+            component: '/staffroster',
           },
           {
             path: '/staffroster/roster',
             name: '员工花名册',
             icon: <CrownOutlined />,
-            component: <RosterMain name={'员工花名册'} />,
+            component: '/staffroster/roster',
           },
           {
-            path: '/home/talent',
+            path: '/staffroster/talent',
             name: '人才库',
             icon: <CrownOutlined />,
-            component: <Welcome />,
+            component: '/staffroster/talent',
           },
         ],
       },
       {
-        path: '/recruitment',
+        path: '/staffroster/recruitment ',
         name: '招聘管理',
         icon: <CrownOutlined />,
-        component: <Welcome />,
+        component: '/staffroster',
       },
       {
         name: '薪酬考核',
         icon: <TabletOutlined />,
-        path: '/salary',
-        component: <Welcome />,
+        path: '/staffroster/salary',
+        component: '/staffroster',
       },
       {
         name: '设置',
         icon: <TabletOutlined />,
-        path: '/settings',
-        component: <Welcome />,
+        path: '/staffroster/settings',
+        component: '/staffroster',
       },
     ],
   },
   location: {
-    pathname: '/',
+    pathname: '/staffroster',
   },
 };

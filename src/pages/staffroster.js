@@ -28,6 +28,7 @@ export default class staffroster extends React.Component {
       pathname: '/welcome',
       collapsed: false,
       insidePage: <Welcome />,
+      defaultProps: defaultProps,
     };
   }
 
@@ -40,7 +41,7 @@ export default class staffroster extends React.Component {
       <div>
         <div>
           <ProLayout
-            {...defaultProps}
+            {...this.state.defaultProps}
             title={'吾立知HR系统'}
             logo={Logo}
             fixSiderbar
@@ -82,10 +83,14 @@ export default class staffroster extends React.Component {
             menuItemRender={(item, dom) => (
               <a
                 onClick={() => {
-                  //console.log(router);
-                  history.push(item.path);
+                  history.push(item.component);
+                  let defaultProps1 = this.state.defaultProps;
+                  defaultProps1.location.pathname = item.path;
+                  console.log(item.path);
+                  console.log(defaultProps1.location);
                   this.setState({
                     insidePage: item.component,
+                    defaultProps: defaultProps1,
                   });
                 }}
               >
@@ -98,7 +103,7 @@ export default class staffroster extends React.Component {
               style={{
                 padding: 10,
                 minHeight: 280,
-                backgroundColor: '#ffffff',
+                backgroundColor: '#f0f2f5',
               }}
             >
               {this.props.children}

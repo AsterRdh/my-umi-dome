@@ -8,6 +8,7 @@ import {
   Row,
   Col,
   Popconfirm,
+  Typography,
 } from 'antd';
 import { dataSource, columns } from '../constant/domeData';
 import { RedoOutlined } from '@ant-design/icons';
@@ -40,23 +41,15 @@ class _List extends Component {
     this.props.dispatch({ type: 'personData/reload', item: value });
   }
 
-  onChange = page => {
-    this.setState({
-      nowPage: page,
-      selectedRowKeys: [],
-    });
-  };
-
   render() {
-    const { loading, selectedRowKeys } = this.state;
-    const { Header, Footer, Sider, Content } = Layout;
+    const { selectedRowKeys } = this.state;
+    const { Header, Content } = Layout;
+    const { Title } = Typography;
     const rowSelection = {
       selectedRowKeys,
       onChange: this.onSelectChange,
     };
 
-    let data = this.state.data;
-    let self = this;
     this.props.columns.forEach(function(item, index) {
       if (item.key == 'action') {
         item.render = (text, record) => (
@@ -87,20 +80,21 @@ class _List extends Component {
       <Layout
         style={{
           backgroundColor: '#ffffff',
+          padding: 20,
+          paddingTop: 50,
         }}
       >
-        <h1>count:{this.props.count}</h1>
         <Header style={{ backgroundColor: '#ffffff', fontSize: 20 }}>
           <Row>
             <Col span={12}>
-              <div>{this.props.name}</div>
+              <Title level={2}>员工花名册</Title>
             </Col>
             <Col span={12}>
               <div style={{ textAlign: 'right' }}>
                 <Button
                   type="primary"
                   onClick={() => {
-                    history.push('/staffroster/roster/card');
+                    history.push('/staffroster/roster/add');
                   }}
                 >
                   新增
@@ -111,7 +105,6 @@ class _List extends Component {
                   icon={<RedoOutlined />}
                   style={{ marginLeft: 20 }}
                 />
-                <Link to="/index">index</Link>
               </div>
             </Col>
           </Row>
@@ -126,22 +119,13 @@ class _List extends Component {
               return {
                 onDoubleClick: event => {
                   debugger;
-
+                  history.push('/staffroster/roster/card');
                   console.log(record);
                 },
               };
             }}
           />
         </Content>
-
-        <Footer style={{ textAlign: 'center', backgroundColor: '#ffffff' }}>
-          <Pagination
-            defaultCurrent={1}
-            current={this.state.nowPage}
-            total={this.state.totalPage}
-            onChange={this.onChange}
-          />
-        </Footer>
       </Layout>
     );
   }

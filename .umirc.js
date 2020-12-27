@@ -18,6 +18,10 @@ export default defineConfig({
               component: '@/pages/rosterpage/card/index',
             },
             {
+              path: '/staffroster/roster/add',
+              component: '@/pages/rosterpage/card/addPage',
+            },
+            {
               path: '/staffroster/roster/',
               component: '@/pages/rosterpage/list/index',
             },
@@ -28,8 +32,23 @@ export default defineConfig({
           ],
           Routes: ['@/pages/rosterpage/main/index.js'],
         },
+        {
+          path: '/staffroster/talent',
+          component: '@/pages/talentpage/main/index',
+          routes: [
+            {
+              path: '/staffroster/talent/',
+              component: '@/pages/talentpage/list/index',
+            },
+            {
+              path: '/staffroster/talent/list',
+              component: '@/pages/talentpage/list/index',
+            },
+          ],
+          Routes: ['@/pages/talentpage/main/index.js'],
+        },
       ],
     },
-    { path: '/welcome', component: '@/pages/welcome' },
+    { path: '/staffroster/welcome', component: '@/pages/welcome' },
   ],
 });

@@ -12,7 +12,7 @@ class _Welcome extends React.Component {
 
   render() {
     return (
-      <div style={{ textAlign: 'center' }}>
+      <div style={{ textAlign: 'center', backgroundColor: '#ffffff' }}>
         <img src={myName} />
         <div>
           GitHub:
